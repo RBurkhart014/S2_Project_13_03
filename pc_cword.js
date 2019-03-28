@@ -58,6 +58,8 @@ var typeDirection;
 
 window.onload = init;
 
+//ran the init function and gave all the variables specifications
+
 function init() {
       allLetters = document.querySelectorAll("table#crossword span");
       currentLetter = allLetters[0];
@@ -66,6 +68,8 @@ function init() {
       acrossClue = document.getElementById("acrossID");
       downClue = document.getElementById("downID");
 }
+
+//gave the variables specific references 
 
 function formatPuzzle(puzzleLetter) {
       currentLetter = puzzleLetter;
@@ -82,6 +86,7 @@ function formatPuzzle(puzzleLetter) {
       }
 }
 
+//attempted to give the crossword some funtions & styles but didnt finish
 
 
 /*====================================================*/
