@@ -7,8 +7,8 @@
 
    Crossword Puzzle Script
    
-   Author: 
-   Date:   
+   Author: Ryan Burkhart
+   Date: 3/26/19  
    
    Global Variables
    ================
@@ -49,13 +49,38 @@
 
 */
 
+var allLetters;
+var currentLetter;
+var wordLetters;
+var acrossClue;
+var downClue;
+var typeDirection;
 
+window.onload = init;
 
+function init() {
+      allLetters = document.querySelectorAll("table#crossword span");
+      currentLetter = allLetters[0];
+      var acrossID = currentLetter.dataSet.clueA;
+      var downID = currentLetter.dataSet.clueD;
+      acrossClue = document.getElementById("acrossID");
+      downClue = document.getElementById("downID");
+}
 
-
-   
-
-
+function formatPuzzle(puzzleLetter) {
+      currentLetter = puzzleLetter;
+      for (var i = 0; i < allLetters.length; i++) {
+            allLetters[i].style.background = "";
+      }
+      acrossClue.style.color = "";
+      downClue.style.color = "";
+      if (currentLetter.dataSet.clueA != "undefined") {
+            acrossClue = currentLetter.dataSet.clueA;
+            acrossClue.style.color = blue;
+            wordLetters = document.querySelectorAll("[data-clue-A] =" + document.querySelectorAll("[data-clue-A]").value);
+            wordLetters.style.color = "rgb(231, 231, 255)";
+      }
+}
 
 
 
