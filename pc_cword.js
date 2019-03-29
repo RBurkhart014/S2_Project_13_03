@@ -78,15 +78,32 @@ function formatPuzzle(puzzleLetter) {
       }
       acrossClue.style.color = "";
       downClue.style.color = "";
-      if (currentLetter.dataSet.clueA != "undefined") {
-            acrossClue = currentLetter.dataSet.clueA;
-            acrossClue.style.color = blue;
-            wordLetters = document.querySelectorAll("[data-clue-A] =" + document.querySelectorAll("[data-clue-A]").value);
-            wordLetters.style.color = "rgb(231, 231, 255)";
+
+      if (currentLetter.dataSet.clueA !== undefined) {
+            acrossClue = document.getElementById(currentLetter.dataSet.clueA);
+            acrossClue.style.color = "blue";
+            wordLetters = document.querySelectorAll("[data-clue-a =" + currentLetter.dataSet.clueA + "]");
+            
+            for (var i = 0; i < wordLetters.length; i++) {
+                  wordLetters[i].style.color = "rgb(231, 231, 255)";
+            }
+      }
+
+      if (currentLetter.dataSet.clueD !== undefined) {
+            downClue = document.getElementById(currentLetter.dataSet.clueD);
+            downClue.style.color = "blue";
+            wordLetters = document.querySelectorAll("[data-clue-a =" + currentLetter.dataSet.clueD + "]");
+            
+            for (var i = 0; i < wordLetters.length; i++) {
+                  wordLetters[i].style.color = "rgb(255, 231, 231)";
+            }
+
       }
 }
 
 //attempted to give the crossword some funtions & styles but didnt finish
+
+
 
 
 /*====================================================*/
